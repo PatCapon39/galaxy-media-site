@@ -20,10 +20,12 @@ urlpatterns = [
     path('aaf', views.aaf_info, name="home_aaf_info"),
     path('institutions', views.australian_institutions,
          name="home_au_institutions"),
-    re_path(r'^[\w\d\_-]+.html$', views.page, name='home_page'),
 
     # Redirect
     path('galaxy', redirects.homepage, name="redirect_home"),
     path('galaxy/', redirects.homepage, name="redirect_home"),
     path('help', redirects.support, name="redirect_support"),
+
+    # Arbitrary html pages
+    re_path(r'^[\w\d\_-]+.html$', views.page, name='home_pages'),
 ]
